@@ -1,17 +1,25 @@
 require 'wav-file'
 require 'pry'
 require 'readline'
+require 'find'
 require 'win32/sound' 
 include Win32
 
-# prompt the user to see what they want to do
+option = 0  #declare a variable to start my while loop
+
+# define a method to prompt the user for a few options
 
 def input(prompt = "", newline=false)
   prompt += "\n" if newline
   Readline.readline(prompt, true).squeeze(" ").strip
 end
 
-option = 0
+# define a method to list available wav files to be played
+
+file_name = Dir["c:/Users/shaustin/dev/wave/*"]
+  puts file_name
+
+#begin while loop to start program based on user inputs
 
 while option != '3' do
   
