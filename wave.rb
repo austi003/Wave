@@ -11,7 +11,11 @@ def input(prompt = "", newline=false)
   Readline.readline(prompt, true).squeeze(" ").strip
 end
 
-option = input "What would you like to do? Press 1 to play normal,\n press 2 to play backwards, or press 3 to exit"
+option = 0
+
+while option != '3' do
+  
+option = input "What would you like to do? Press 1 to play normal, press 2 to play backwards, or press 3 to exit\n"
 
 # If they select 1, loads the wave file, plays the sound, upacks the data and converts to integers, looks for largest value
 # smallest value, and number of values above a test number
@@ -77,7 +81,7 @@ elsif  #if they select exit, they get a friendly little message
 else   #if they select any other characters, it gives them an error
   p "I don't think you entered a valid selection"
 end
-
+end
 
 
 
